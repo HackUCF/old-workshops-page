@@ -1,0 +1,35 @@
+<html>
+<head><title>CTF Training 3</title>
+<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script src="http://joshbuddy.github.io/spoiler-alert/spoiler.js"></script>
+<meta charset="UTF-8">
+</head>
+<body onload="$('spoiler, .spoiler').spoilerAlert()">
+
+<div class="container">
+	<div class="page-header">
+		<h1>CTF Challenges</h1>
+	</div>
+	<p>Hey again! For this meeting, we're going to go over challenges from the previous CTFs. You probably haven't solved, on your own, each challenge from CSAW 2014. If you've solved a few, try going back and solving them as quickly as possible.</p>
+	<b>tips</b>
+	<ul>
+		<li>The flag format varies, you'll know when you get one(or ask us)</li>
+		<li>Descriptions might contain hints</li>
+		<li>Harder challenges might contain spoilers for easier ones</li>
+		<li><i>Keep track of the flags/keys you get! We might(maybe) think of something fun to do with them. maybe.</i></li>
+    <li><a href="http://www.mathemainzel.info/files/x86asmref.html">Intel Assembly Reference</a></li>
+	</ul>
+<div class="panel">
+  <div class="panel-head">
+    <h1>CSAW 2014</h1>
+  </div>
+  <div class="panel-content">
+  <p><a href="https://ctf.isis.poly.edu/challenges">https://ctf.isis.poly.edu/challenges</a></p>
+  <p>Try to solve the exploitation and reverse engineering challenges, you can run the exploitation servers locally and exploit them locally. To get started, you'll want to pop them open in IDA Pro(on one of the tools flashdrives in the room) and look at strings. From there, looking where those strings are used will give you an idea of how the program works. You'll probably want to look for code that looks like it's handling buffers, in most of these...</p>
+  </div>
+</div>
+
+</body>
+</html>

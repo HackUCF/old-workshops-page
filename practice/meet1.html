@@ -1,0 +1,224 @@
+<html>
+<head><title>CTF Training 1</title>
+<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script src="http://joshbuddy.github.io/spoiler-alert/spoiler.js"></script>
+<meta charset="UTF-8">
+</head>
+<body onload="$('spoiler, .spoiler').spoilerAlert()">
+
+<div class="container">
+	<div class="page-header">
+		<h1>CTF Challenges</h1>
+	</div>
+	<p>Here are the challenge categories we've got for this meet: <b>Reverse Engineering<small>+exploitation</small></b> and <b>Web</b>. Challenges have a guesstimate of how many points they'd be worth in an average CTF. It's OK to get stuck and have no idea how to do something. Flag down one of the people walking around helping, we're here to make sure you can solve these. </p>
+	<b>tips</b>
+	<ul>
+		<li>The flag format varies, you'll know when you get one(or ask us)</li>
+		<li>Descriptions might contain hints</li>
+		<li>Harder challenges might contain spoilers for easier ones</li>
+		<li><i>Keep track of the flags/keys you get! We might(maybe) think of something fun to do with them. maybe.</i></li>
+    <li><a href="http://www.mathemainzel.info/files/x86asmref.html">Intel Assembly Reference</a></li>
+	</ul>
+<a class="btn btn-success" data-toggle="collapse" data-target="#collapseEasy" href="#collapseEasy">Easy</a>
+<a class="btn btn-warning" data-toggle="collapse" data-target="#collapseMed" href="#collapseMed">Medium</a>
+<a class="btn btn-danger" data-toggle="collapse" data-target="#collapseHard" href="#collapseHard">Hard</a>
+<br />
+<div class="well collapse" id="collapseEasy">
+<h2> Easy Challenge Categories </h2>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-warning" id="panel1">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseOne" 
+           href="#collapseOne">
+          Reverse Engineering - ~50-100
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>Never opened a debugger? These are for you! Use IDA pro to analyze them(it's in the tool file!). You'll want to execute one of these on a linux box, at some point.</p>
+        <ul><li><a href="./re50" target="_blank">re50</a></li><li><a href="./re100" target="_blank">re100</a></li></ul>
+        <h4>Hint for re50</h4>
+        <spoiler>Try looking at the strings menu in IDA to see interesting text in the file, you can double click them and check cross-references to see where they are used. </spoiler>
+        <h4>Hint for re100</h4>
+		<spoiler>Do you see the program flow branch off in IDA above the interesting strings? You can use <a href="http://www.blackhatlibrary.net/Gdb" target="_blank">gdb on linux</a>(useful commands: "set disassembly-flavor intel", b *0xaddress, si, x/i $eip, set $eip=0xaddress) to control execution, or you can modify the assembly using a hex editor(a little harder! you've got to figure out the file offset of the instruction you want to change, and what the number is for the instruction you want to change it to using something like www.onlinedisassembler.com)
+		</spoiler>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-danger" id="panel2">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseTwo" 
+           href="#collapseTwo" class="collapsed">
+          Exploitation - ~50 
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>For the below challenge, you'll probably want a tool called "netcat." it's shortened to "ncat" or "nc" on certain linux distributions. <code>apt-get install nmap</code> if not. An example usage would be "ncat address port" to start a connection, you can type text in to send it off!</p>
+        <h3>pwn50</h3><!-- http://captf.com/2013/csaw-quals/exploitation/exploit1-100/ -->
+        <p>This server has better flow than geohot. <a href="./pwn50">this</a> binary is running at <a href="192.73.233.111 40701">192.73.233.111 40701</a>. You'll probably want <a href="./pwn50.txt">the source!</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-info" id="panel3">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseThree"
+           href="#collapseThree" class="collapsed">
+          Web - ~100
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        <i><b>Sorry, challenge broken. Check out the medium web or the later challenges in picoctf(instructions under "I've never done any...")</b></i>
+
+        <s>
+        <p>A thousand years into the future, explorers excavate a datacenter to find only one server remaining, still blinking away.</p>
+
+        <p>"What's this sticker on the server say?" <i>"TODO: Test for ▒QL ▓█▒ject▓██▒ vulnerability issues in our My▒QL Database</i>"</p>
+
+        <p>See if you can find any interesting data in the server's website.</p>
+
+        <a href="#here">click here</a></s>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-success" id="panel4">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseFour" 
+           href="#collapseFour" class="collapsed">
+          I've never done any security stuff before...
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>That's fine too! Register for picoctf here(don't need to give a valid email or anything): <a href="https://picoctf.com/registration">https://picoctf.com/registration</a></p>
+
+        <p>When you log in, you probably want to click "Switch to basic problem viewer" under their mini-game to see just the problems.</p>
+
+        <p>The key to solving them is thinking like a CTF player:</p>
+        <ul>
+        	<li>Do you see any phrases/words/numbers you might be able to google to try to get the answer? (try not to click on links that are writeups for the challenge! those don't exist for live CTFs)</li>
+        	<li>Is the wording/phrasing/story of the challenge hinting at something?</li>
+        	<li>Is there a tool I can find to do what I think I need to do? Google might know! (so will any of our helpers)</li>
+        	<li>Go over what you know about the problem in your head, you might come up with an answer to one of the above.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-------------------------------------------------------------------- END EASY ------------------------------------------------------------------------>
+
+<div class="well collapse" id="collapseMed">
+<h2> Medium Challenge Categories </h2>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-warning" id="panel1m">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseOnem" 
+           href="#collapseOnem">
+          Reverse Engineering - ~200 pts
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOnem" class="panel-collapse collapse">
+      <div class="panel-body">
+        This is a Windows binary challenge. There's two passwords, can you get them both? If you have no windows machine, you can get the flags by careful analysis+math! <a href="./re200.exe">re200</a>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-danger" id="panel2m">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseTwom" 
+           href="#collapseTwom" class="collapsed">
+          Exploitation - ~100 pts
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwom" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p></p>
+        <h3>pwn100</h3><!-- idk my bff jill  -->
+        <font style="color:red;weight:900;font-size:30px;">this is broken, sorry. you can still try, if you use exec /bin/sh shellcode I can tell you if you won.</font>
+        <p>This challenge requires you to create/find/use "shellcode." The flag is in a file in the same folder called flag.<a href="./pwn100">this</a> binary is running at <a href="192.73.233.111:40702">192.73.233.111:40702</a>. </p>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-info" id="panel3m">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseThreem"
+           href="#collapseThreem" class="collapsed">
+          Web - ~200-300 pts
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThreem" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<b>requires scripting <small>or like 30 minutes of manual labor</small></b>
+      	<hr>
+      	<p>It's high time I recall my password...</p>
+      	<a href="/medium2.php">click here</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-------------------------------------------------------------------- END MED ------------------------------------------------------------------------>
+
+<div class="well collapse" id="collapseHard">
+<h2> Hard Challenge Categories </h2>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-warning" id="panel1m">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseOnemh" 
+           href="#collapseOnemh">
+          Reverse Engineering - ~300 pts
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOnemh" class="panel-collapse collapse">
+      <div class="panel-body">
+        For a program, this one isn't very <a href="./re300">logical.</a>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-danger" id="panel2m">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseTwomh" 
+           href="#collapseTwomh" class="collapsed">
+          Exploitation - Open Field
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwomh" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>Have you solved <a href="http://pwnable.kr">all of these</a>? The answer is no. Do so! ditmar 4 help</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+<!-------------------------------------------------------------------- END HARD ------------------------------------------------------------------------>
+
+
+</body>
+</html>

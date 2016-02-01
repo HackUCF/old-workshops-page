@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define BANNER_FILE "banner.txt"
+
+/* In case we use inetd */
+#define PRINTF(...) do { \
+  printf(__VA_ARGS__); fflush(stdout); \
+} while (0)
+
+typedef enum
+{
+    Authenticate = 1,
+    Exit,
+} Action;
+
+
+static void remove_newline(char* str)
+{
+    char* last = str + strlen(str) - 1;
+
+    if (last >= str && *last == '\n')
+        *last = 0;
+}
+
+static void authenticate(void)
+{
+  char pass[15];
+
+  PRINTF("Enter password: ");
+  fgets(pass, 15, stdin);
+  PRINTF("%s", "[+] Authentification sucess !\n");
+  sleep(1);
+}
+
+static Action get_action(void)
+{
+    char choice[15];
+    Action action;
+
+    while (1)
+    {
+        PRINTF("Action: ");
+        fgets(choice, sizeof(choice), stdin);
+        if (sscanf(choice, "%u", &action))
+            return action;
+    }
+}
+
+static void print_file(const char* file, const char* def)
+{
+    char buf[100];
+    FILE* f;
+
+    f = fopen(file, "r");
+    if (f)
+    {
+        while (fgets(buf, sizeof(buf), f))
+            PRINTF("%s", buf);
+
+        fclose(f);
+    }
+    else
+        PRINTF("%s\n", def);
+}
+
+
+static void menu(char *user)
+{
+  system("/usr/bin/clear");
+  print_file(BANNER_FILE, "Welcome to warhamer");
+
+  if (!strlen(user))
+  {
+    PRINTF("\n\nUser name : ");
+    fgets(user, 49, stdin);
+    remove_newline(user);
+  }
+  else
+  {
+    PRINTF("Hello '");
+    PRINTF(user);
+    PRINTF("', what would you like to do ?\n");
+    PRINTF(" %u. Process authentification\n", Authenticate);
+    PRINTF(" %u. Exit this cool program\n", Exit);
+    switch (get_action())
+    {
+      case Authenticate:
+	authenticate();
+	return;
+      case Exit:
+	exit(0);
+    }
+
+  }
+}
+
+int main(void)
+{
+  char user[50] = {0};
+  while (1)
+    menu(user);
+  return 0;
+}

@@ -1,0 +1,206 @@
+<html>
+<head><title>CTF Training 1</title>
+<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script src="http://joshbuddy.github.io/spoiler-alert/spoiler.js"></script>
+<meta charset="UTF-8">
+</head>
+<body onload="$('spoiler, .spoiler').spoilerAlert()">
+
+<div class="container">
+	<div class="page-header">
+		<h1>CTF Challenges</h1>
+	</div>
+	<p>Here are the challenge categories we've got for this meet: <b>Reverse Engineering<small>+exploitation</small></b>. Challenges have a guesstimate of how many points they'd be worth in an average CTF. It's OK to get stuck and have no idea how to do something. Flag down one of the people walking around helping, we're here to make sure you can solve these. </p>
+	<b>tips</b>
+	<ul>
+		<li>The flag format varies, you'll know when you get one(or ask us)</li>
+		<li>Descriptions might contain hints</li>
+		<li>Harder challenges might contain spoilers for easier ones</li>
+		<li><i>Keep track of the flags/keys you get! We might(maybe) think of something fun to do with them. maybe.</i></li>
+    <li><a href="http://www.mathemainzel.info/files/x86asmref.html">Intel Assembly Reference</a></li>
+	</ul>
+<a class="btn btn-success" data-toggle="collapse" data-target="#collapseEasy" href="#collapseEasy">Easy</a>
+<a class="btn btn-warning" data-toggle="collapse" data-target="#collapseMed" href="#collapseMed">Medium</a>
+<a class="btn btn-danger" data-toggle="collapse" data-target="#collapseHard" href="#collapseHard">Hard</a>
+<br />
+<div class="well collapse" id="collapseEasy">
+<h2> Easy Challenge Categories </h2>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-warning" id="panel1">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseOne" 
+           href="#collapseOne">
+          Reverse Engineering - 50
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>The flag for this challenge is the correct password for the file program. Have you heard of a language called Java? I bet if you search for some "java decompilation tools" you'll find something helpful. Graphical User Interfaces(GUIs) are usually pretty nice...</p>
+        <ul><li><a href="./re50.jar" target="_blank">re50</a></li></ul>
+        <h4>hint1</h4>
+        <spoiler>use JD-GUI to read the source!</spoiler>
+        <h4>hint2</h4>
+        <spoiler>reverse engineering is about reversing some kind of operation....can you do the reverse of the code? (pen+paper helps!)</spoiler>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-danger" id="panel2">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseTwo" 
+           href="#collapseTwo" class="collapsed">
+          Exploitation - 100
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p><h4>due to technical difficulties please try the medium difficulty exploitation or the very basic pwnables @ <a href="http://pwnable.kr/?p=probs">pwnable.kr</a>(we've solved these too and can help you)</h4></p>
+        <p>if you get further in picoctf there are exploitation challenges there as well!</p>
+        <p>things you'll need/want for pwnable.kr:</p>
+        <ul><li>ncat (you can <code>apt-get install nmap</code> on debian to grab this, it comes with kali)</li><li>ida pro(check with orgs for tools file)</li><li>the assembly reference at the top of this page</li></ul>
+        <!--
+        <p>You'll need <code>ncat</code> to connect to this challenge. This tool is provided for you in Kali Linux, and in debian is included in <code>apt-get install nmap</code></p>
+        <p><a href="./pwn100">This service</a> uses foolproof cryptography to prevent you from executing your code! It's a good thing you can't make a hash come out to whatever you want....right? To connect... <code>ncat a-za-z0-9.net 40703</code></p>
+        <h4>hint1</h4>
+        <spoiler>Pretty much everything is executable. You'll need some short shellcode.</spoiler>
+        <h4>hint2</h4>
+        <spoiler>Have you looked at the IDA pseudocode?</spoiler>
+        <h4>hint3</h4>
+        <spoiler>Googling what those library call arguments are is super helpful...</spoiler>
+        <h4>hint4</h4>
+        <spoiler><code>(*var)();</code> will execute the code at the address of var!</spoiler>
+        -->
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-success" id="panel4">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseFour" 
+           href="#collapseFour" class="collapsed">
+           I'm still new!
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>That's fine too! Register for picoctf here(don't need to give a valid email or anything): <a href="https://picoctf.com/registration">https://picoctf.com/registration</a></p>
+
+        <p>When you log in, you probably want to click "Switch to basic problem viewer" under their mini-game to see just the problems.</p>
+
+        <p>The key to solving them is thinking like a CTF player:</p>
+        <ul>
+        	<li>Do you see any phrases/words/numbers you might be able to google to try to get the answer? (try not to click on links that are writeups for the challenge! those don't exist for live CTFs)</li>
+        	<li>Is the wording/phrasing/story of the challenge hinting at something?</li>
+        	<li>Is there a tool I can find to do what I think I need to do? Google might know! (so will any of our helpers)</li>
+        	<li>Go over what you know about the problem in your head, you might come up with an answer to one of the above.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-------------------------------------------------------------------- END EASY ------------------------------------------------------------------------>
+
+<div class="well collapse" id="collapseMed">
+<h2> Medium Challenge Categories </h2>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-warning" id="panel1m">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseOnem" 
+           href="#collapseOnem">
+          Reverse Engineering - ~200 pts
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOnem" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>Have you heard of python? Well, <a href="./re200">here is</a> a python bytecode challenge. You can run it via <code>python2 crackme.pyc (and extra arguments after)</code></p>
+        <h4>Need a tool?</h4>
+        <spoiler>uncompyle2</spoiler>
+        <h4>hint - input format</h4>
+        <spoiler>try giving it 9 numbers as arguments :)</spoiler>
+        <h4>hint - math</h4>
+        <spoiler>you'll need to use a python bytecode reference/tool (and probably pen/paper) to understand what mathematic equations the code is doing</spoiler>
+        <h4>hint2 - math is 2 hard</h4>
+        <spoiler>if you reverse engineered some equations and don't know how to solve them...they create a system of equations. you can find a solver online but the syntax it wants might be harder than reading up on your math</spoiler>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-danger" id="panel2m">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseTwom" 
+           href="#collapseTwom" class="collapsed">
+          Exploitation - ~200 pts
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwom" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>Why shouldn't user data be trusted? <a href="./pwn200">this binary</a>(<a href="./pwn200.txt">source</a>) is running at <code>ncat lse.epita.fr 52115</code>. Shellcode not really necessary.</p>
+        <h4>hint1</h4>
+        <spoiler>it's not a buffer overflow.</spoiler>
+        <h4>hint2</h4>
+        <spoiler>what can a hacker do if you pass his input to printf?</spoiler>
+        <h4>hint3 - superhint</h4>
+        <spoiler>http://codearcana.com/posts/2013/05/02/introduction-to-format-string-exploits.html</spoiler>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-------------------------------------------------------------------- END MED ------------------------------------------------------------------------>
+
+<div class="well collapse" id="collapseHard">
+<h2> Hard Challenge Categories </h2>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-warning" id="panel1m">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseOnemh" 
+           href="#collapseOnemh">
+           Reverse Engineering
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOnemh" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>check out the crackme category here -- http://ctf.lse.epita.fr/e/</p>
+        <p>if you want to do hard you should probably be able to do up to "640k"</p>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-danger" id="panel2m">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseTwomh" 
+           href="#collapseTwomh" class="collapsed">
+          Exploitation - Open Field
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwomh" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>Solve <a href="http://pwnable.kr">all of these</a>? These are seriously quality exploitation challenges.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+<!-------------------------------------------------------------------- END HARD ------------------------------------------------------------------------>
+
+
+</body>
+</html>
