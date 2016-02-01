@@ -1,0 +1,141 @@
+<div style="float:left; width=50%">
+<h1>Hack@UCF Presents: Challenges!</h1>
+
+<h3>Halloween Fun!</h3>
+<ul>
+<li><a href="/ghost.png">candy grab 101</a></li>
+(Hint: this is a multi step challenge)
+</ul>
+<p>Written by a Hack@UCF member</p>
+
+<h3>Web Hacking:</h3>
+<ol>
+<li><a href="easy.php">easy 1</a></li>
+<li><a href="easy2.php">easy 2</a></li>
+<li><a href="/medium">medium</a></li>
+<li><a href="/medium2.php">medium2</a></li>
+</ol>
+<p> Written by a Hack@UCF member </p>
+
+
+<h3>Pwning Fun:</h3>
+<ul>
+<li><a href="http://ctf.c0deh4cker.com">pwnables</a><br/></li>
+</ul>
+<p> Written by a Hack@UCF member </p>
+
+<h3>MeetingPractice Index:</h3>
+<ol>
+<li><a href="/practice/meet1.html">Meeting 1 (September 6)</a></li>
+<li><a href="/practice/meet2">Meeting 2 (September 13)</a></li>
+<li><a href="/practice/meet3">Meeting 3 (October 4)</a></li>
+</ol>
+<p>Grab bags of challenges from previous ctfs, like:</p>
+<ul>
+<li><a href="https://ctf.isis.poly.edu/">CSAW</a></li>
+<li><a href="https://wildwildweb.fluxfingers.net/scoreboard">Hack.LU</a></li>
+</ul>
+<p>For more, check out: <a href="https://www.ctftime.org">ctftime</a></p>
+<h3>Friends of Hack@UCF:</h3>
+Pwn: <a href="http://ctf.hackevergreen.org">Hack Evergreen </a><br/>
+Learn: <a href="http://goo.gl/iwP3Zi">Offensive Computer Security VM</a><br/>
+Credentials - <b>username</b>: reader | <b>pass</b>: aoe<br/>
+<b>md5: e6e7bd8ab05635995d808a61a7bfb0ab  ArtOfExploitatoin_RedwoodChalls.ova.gz</b><br/>
+<b>md5: 9b6963af7342c02fc2ef1265652015ca  ArtOfExploitatoin_RedwoodChalls.ova</b>
+<p> Offensive Computer Security challs on the desktop are from Owen Redwood, who taught <a href="http://www.cs.fsu.edu/~redwood/OffensiveComputerSecurity/"> Offensive Computer Security</a> at FSU.</p>
+</div>
+<div style="float:left; width=1%">
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+|<br/>
+</div>
+<div style="float:left; width=49%">
+<h1>Hack@UCF Presents: Resources!</h1>
+<h3>Tips and Tricks</h3>
+<ul>
+<li>Syscall Table: /usr/include/asm/unistd.h</li>
+<li>Password lists: <a href="https://wiki.skullsecurity.org/Passwords">passwords</a></li>
+<li>Shellcodes: <a href="http://shell-storm.org/shellcode/">shellstorm</a></li>
+<li>Conversion tools: <a href="http://asciitohex.com">AsciiToHex&More</a></li>
+<li>File signatures: <a href="http://www.garykessler.net/library/file_sigs.html">Sigs</a></li>
+<li>Vim into a hexeditor: ":%!xxd", (change back) ":%!xxd -r"</li>
+<li>Gdb command: set arch [arch], (may need: apt-get install gdb-multiarch)</li>
+<li>Intro to kernel exploitation: <a href="http://ugcs.net/~keegan/talks/kernel-exploit/talk.pdf">slides</a>, <a href="http://www.gonullyourself.org/library/A%20Guide%20to%20Kernel%20Exploitation%20Attacking%20the%20Core.pdf">book</a></li>
+</ul>
+<h3>Tools</h3>
+<ul>
+<li>System Emulator and Virtualizer (arm, sparc, etc.): <a href="http://wiki.qemu.org/Download">QEMU</a></li>
+<li>Remote service debugging on local machine: <a href="https://sourceware.org/gdb/onlinedocs/gdb/Server.html">gdbserver</a></li>
+<li>Hexeditor: <a href="http://mh-nexus.de/en/downloads.php?product=HxD">HxD</a></li>
+</ul>
+<h3>Random Exploitation Notes</h3>
+<ul>
+<li>x86 IP - Instruction Pointer, SP - Stack Pointer</li>
+<li><b>Trampoline: jmp esp</b></li>
+<ul>
+<li>Why?<b> We don't care about actual address of buffer now</b></li>
+<li>Payload continues after saved return address overwrite</li>
+<li>IP just jumps forward to it</li>
+<li>Defeats: ASLR</li>
+<li>Defeated by: Non-executable stack (NX)</li>
+</ul>
+<li><b>Stack Pivot: move stack pointer to fake "stack"</b></li>
+<ul>
+<li>Why?<b> The stack can be limiting: buffer size, nx, etc.</b></li>
+<li>Used with Return Oriented Programming (ROP)</li>
+<li>Example: mov esp, (register pointing to attacker controlled "stack")</li>
+<li>Defeats: DEP,NX</li>
+</ul>
+<li><b>Info Leak: discover information in process memory at runtime</b></li>
+<ul>
+<li>Combine with surgical ret2libc: math known libc address with desired </li>
+<li>Defeats (Situational): ASLR, Stack Canary</li>
+</ul>
+</ul>
+</div>
