@@ -1,2 +1,2 @@
-# challenges.hackucf.org
-HackUCF CTF prep challenges
+# workshops.hackucf.org
+HackUCF workshops homepage
