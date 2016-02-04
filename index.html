@@ -4,6 +4,7 @@
   <title>Hack@UCF Workshops</title>
 
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- meyer reset -->
   <link rel="stylesheet" href="css/reset.css">
@@ -28,27 +29,29 @@
     <div class="row">
       <div class="col-md-12">
         <h1>Workshops</h1>
-        <div class="col-md-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>Binary Exploitation Workshop</h4>
-            </div>
-            <div class="panel-body">
-              <a href="https://github.com/kablaa/CTF-Workshop">Challenges</a>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Binary Exploitation Workshop</h4>
+              </div>
+              <div class="panel-body">
+                <a href="https://github.com/kablaa/CTF-Workshop">Challenges</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>Web Hacking Workshop</h4>
-            </div>
-            <div class="panel-body">
-              <a href="https://github.com/HackUCF/workshops-http">Challenges</a>
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Web Hacking Workshop</h4>
+              </div>
+              <div class="panel-body">
+                <a href="https://github.com/HackUCF/workshops-http">Challenges</a>
 
-              <h5>Lecture Slides</h5>
-              <a href="https://goo.gl/4BTjEn">01/30/16 - Intro to the Web</a>
+                <h5>Lecture Slides</h5>
+                <a href="https://goo.gl/4BTjEn">01/30/16 - Intro to the Web</a>
+              </div>
             </div>
           </div>
         </div>
@@ -61,35 +64,39 @@
       <div class="col-md-12">
         <h1>More practice</h1>
 
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>Web Hacking Challenges</h4>
-            </div>
-            <div class="panel-body">
-              <li><a href="easy.php">Easy 1</a> <span class="label label-danger">broken</span></li>
-              <li><a href="easy2.php">Easy 2</a> <span class="label label-danger">broken</span></li>
-              <li><a href="medium">Medium</a> <span class="label label-danger">broken</span></li>
-              <li><a href="medium2.php">Medium 2</a> <span class="label label-danger">broken</span></li>
-              <li><a href="ghost.png">Candy Grab 101</a> (Hint: this is a multi-step challenge)</li>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Web Hacking Challenges</h4>
+              </div>
+              <div class="panel-body">
+                <ul class="list">
+                  <li><a href="easy.php">Easy 1</a> <span class="label label-danger">broken</span></li>
+                  <li><a href="easy2.php">Easy 2</a> <span class="label label-danger">broken</span></li>
+                  <li><a href="medium">Medium</a> <span class="label label-danger">broken</span></li>
+                  <li><a href="medium2.php">Medium 2</a> <span class="label label-danger">broken</span></li>
+                  <li><a href="ghost.png">Candy Grab 101</a> (Hint: this is a multi-step challenge)</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>Wargames</h4>
-            </div>
-            <div class="panel-body">
-              <ul>
-                <li><a href="http://www.pwnable.kr">pwnable.kr</a></li>
-                <li><a href="http://smashthestack.org/">Smash the Stack</a></li>
-                <li><a href="https://www.hackthissite.org/">Hack This Site</a></li>
-                <li><a href="http://overthewire.org/wargames/">Over the Wire</a></li>
-                <li><a href="https://github.com/hackerclub/skidctf">Hack Evergreen</a></li>
-                <li><a href="https://exploit-exercises.com/protostar/">Protostar</a> (Raytheon SI Interview)</li>
-              </ul>
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Wargames</h4>
+              </div>
+              <div class="panel-body">
+                <ul class="list">
+                  <li><a href="http://www.pwnable.kr">pwnable.kr</a></li>
+                  <li><a href="http://smashthestack.org/">Smash the Stack</a></li>
+                  <li><a href="https://www.hackthissite.org/">Hack This Site</a></li>
+                  <li><a href="http://overthewire.org/wargames/">Over the Wire</a></li>
+                  <li><a href="https://github.com/hackerclub/skidctf">Hack Evergreen</a></li>
+                  <li><a href="https://exploit-exercises.com/protostar/">Protostar</a> (Raytheon SI Interview)</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -101,29 +108,32 @@
     <div class="row">
       <div class="col-md-12">
         <h1>Resources</h1>
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>Binary Exploitation Tools</h4>
-            </div>
-            <div class="panel-body">
-              <li><a href="http://www.asciitohex.com/">Hex Converter</a></li>
-              <li><a href="https://github.com/longld/peda">PEDA (for GDB)</a></li>
-              <li><a href="https://github.com/joelpx/reverse">reverse.py</a></li>
-              <li><a href="https://github.com/Gallopsled/pwntools">pwntools</a></li>
-              <li><a href="https://www.hex-rays.com/products/ida/support/download.shtml">IDA</a></li>
-              <li><a href="https://github.com/radare/radare2">radare2 (r2)</a></li>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Binary Exploitation Tools</h4>
+              </div>
+              <div class="panel-body">
+                <ul class="list">
+                  <li><a href="http://www.asciitohex.com/">Hex Converter</a></li>
+                  <li><a href="https://github.com/longld/peda">PEDA (for GDB)</a></li>
+                  <li><a href="https://github.com/joelpx/reverse">reverse.py</a></li>
+                  <li><a href="https://github.com/Gallopsled/pwntools">pwntools</a></li>
+                  <li><a href="https://www.hex-rays.com/products/ida/support/download.shtml">IDA</a></li>
+                  <li><a href="https://github.com/radare/radare2">radare2 (r2)</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <div class="panel panel-default">
+          <div class="col-md-4">
+            <div class="panel panel-default">
             <div class="panel-heading">
               <h4>Past CTF Writeups</h4>
             </div>
             <div class="panel-body">
-              <ul>
+              <ul class="list">
                 <li>
                   Asis Quals
                   (<a href="https://github.com/ctfs/write-ups-2014/tree/master/asis-ctf-quals-2014">2014</a>,
@@ -166,22 +176,18 @@
               </ul>
             </div>
           </div>
+          </div>
         </div>
       </div>
     </div>
     <!-- End Resources -->
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <h1>Upcoming CTFs</h1>
-        <div class="col-md-6">
-          <div class="container-fluid">
-            <iframe src="https://calendar.google.com/calendar/embed?src=ctftime@gmail.com&ctz=America/New_York" width="800px" height="500px"></iframe>
-          </div>
-        </div>
+        <iframe id="ctftime-calendar" src="https://calendar.google.com/calendar/embed?src=ctftime@gmail.com&ctz=America/New_York" height="500px"></iframe>
       </div>
     </div>
-
   </div>
 </body>
 </html>
