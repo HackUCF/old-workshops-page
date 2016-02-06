@@ -3,7 +3,27 @@
     padding-bottom: 10px;
 }
 
+.logo img {
+    max-width: 100%;
+}
+
 h5 {
     font-size: 16px;
     font-weight: bold;
+}
+
+.list {
+    padding-left: 16px;
+    list-style: disc;
+}
+
+#ctftime-calendar {
+    width: 800px;
+    height: 500px;
+}
+
+@media (max-width: 800px) {
+    #ctftime-calendar {
+        width: 100%;
+    }
 }
